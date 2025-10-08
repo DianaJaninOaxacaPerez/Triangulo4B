@@ -1,4 +1,4 @@
-package com.example.triangulo4b.Vista
+package com.example.triangulo4b
 
 import android.os.Bundle
 import android.widget.Button
@@ -9,29 +9,31 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.triangulo4b.Contrato.ContratoCirculo
-import com.example.triangulo4b.Contrato.ContratoRectangulo
 import com.example.triangulo4b.Presentador.PresentadorCirculo
-import com.example.triangulo4b.Presentador.PresentadorRectangulo
-import com.example.triangulo4b.R
 
-class CirculoActivity : AppCompatActivity(), ContratoCirculo.Vista {
-    //Declaramos el txtresultado para poder usarlo
+
+class CirculoActivity : AppCompatActivity() , ContratoCirculo.Vista{
+
     private lateinit var txtResultado: TextView
     private lateinit var Presentador : ContratoCirculo.Presentador
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        setContentView(R.layout.circulo)
 
-        val txtradio: EditText =findViewById<EditText>(R.id.editradio)
+
+        val txtradio: EditText=findViewById<EditText>(R.id.editradio)
         val btnArea: Button =findViewById<Button>(R.id.btnArea)
         val btnPerimetro: Button =findViewById<Button>(R.id.btnPerimetro)
         txtResultado=findViewById<TextView>(R.id.editResultado)
 
 
 
-
-        //Inicializamos al presentador//
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
         Presentador = PresentadorCirculo(this)
         btnPerimetro.setOnClickListener {
             val r = txtradio.text.toString().toFloat()
@@ -42,7 +44,9 @@ class CirculoActivity : AppCompatActivity(), ContratoCirculo.Vista {
             Presentador.areaCirculo(r)
         }
 
+
     }
+
     override fun showAreaCirculo(area: Double) {
         txtResultado.text="El area es ${area}"
         TODO("Not yet implemented")
@@ -55,8 +59,8 @@ class CirculoActivity : AppCompatActivity(), ContratoCirculo.Vista {
 
     override fun showErrorCirculo(msg: String) {
         txtResultado.text=msg
+
         TODO("Not yet implemented")
     }
-
 
 }

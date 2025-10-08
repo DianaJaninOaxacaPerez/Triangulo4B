@@ -2,63 +2,62 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".CirculoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="37dp">
+        android:layout_margin="2dp">
 
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            app:srcCompat="@mipmap/cuadra" />
+            app:srcCompat="@mipmap/cir" />
         <TextView
             android:id="@+id/txvTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Calculadora de Cuadrados 4B"
-            android:textSize="20sp"
-            android:textAlignment="center"/>
+            android:text="Calculadora de cirulos 4B"
+            android:textAlignment="center"
+            android:textSize="20dp"/>
         <EditText
-            android:id="@+id/editlado"
+            android:id="@+id/editradio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Captura el lado"
+            android:hint="Captura el radio"
             android:textAlignment="center"
             android:layout_marginTop="25dp"
             android:textSize="25sp"
             android:textStyle="italic"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnArea"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="50dp"
-            android:backgroundTint="#DB6A8C"
-            android:text="Area"
-            app:rippleColor="#788022" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnPerimetro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:backgroundTint="#DB6A8C"
-            android:text="Perimetro" />
+            <Button
+                android:id="@+id/btnArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:backgroundTint="#1BDECE"
+                android:text="Area"
+                app:rippleColor="#788022" />
 
+            <Button
+                android:id="@+id/btnPerimetro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:backgroundTint="#1BDECE"
+                android:text="Perimetro" />
 
-    </LinearLayout>
+        </LinearLayout>
         <TextView
             android:id="@+id/editResultado"
             android:layout_width="match_parent"
@@ -67,6 +66,16 @@
             android:text="Resultado:"
             android:textAlignment="center"
             android:textSize="25sp" />
-
     </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

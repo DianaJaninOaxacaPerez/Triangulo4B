@@ -1,4 +1,4 @@
-package com.example.triangulo4b
+package com.example.triangulo4b.Vista
 
 import android.os.Bundle
 import android.widget.Button
@@ -10,19 +10,21 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.triangulo4b.Modelo.ContratoTriangulo
 import com.example.triangulo4b.Presentador.PresentadorTriangulo
+import com.example.triangulo4b.R
 import kotlin.math.sqrt
 
-class MainActivity : AppCompatActivity() , ContratoTriangulo.Vista{
+class Triangulo4bActivity : AppCompatActivity() , ContratoTriangulo.Vista{
+
     //Declaramos el txtresultado para poder usarlo
     private lateinit var txtResultado: TextView
     //Declaramos el presentador que vamos a ocupar en la vista
     private lateinit var presentador : ContratoTriangulo.Presentador
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.triangulo4b)
+
         //Inicializamos los componentes que vamos a utilizar//
         val txtl1 = findViewById<EditText>(R.id.edtl1)
         val txtl2 = findViewById<EditText>(R.id.edtl2)
@@ -32,11 +34,12 @@ class MainActivity : AppCompatActivity() , ContratoTriangulo.Vista{
         val btnPerimetro = findViewById<Button>(R.id.btnPerimetro)
         val btnTipo = findViewById<Button>(R.id.btnTipo)
         val txtResultado = findViewById<TextView>(R.id.editResultado)
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-
         }
         //Inicializamos al presentador//
         presentador = PresentadorTriangulo(this)
@@ -49,6 +52,7 @@ class MainActivity : AppCompatActivity() , ContratoTriangulo.Vista{
             txtResultado.text = "El perimetro es : ${p}"
 
         }
+
         btnArea.setOnClickListener {
             val l1 = txtl1.text.toString().toFloat()
             val l2= txtl2.text.toString().toFloat()
@@ -59,6 +63,8 @@ class MainActivity : AppCompatActivity() , ContratoTriangulo.Vista{
             txtResultado.text = "El area es : ${a}"
 
         }
+
+
         btnTipo.setOnClickListener {
             val l1 = txtl1.text.toString().toFloat()
             val l2 = txtl2.text.toString().toFloat()
@@ -79,25 +85,33 @@ class MainActivity : AppCompatActivity() , ContratoTriangulo.Vista{
             txtResultado.text = tipo
 
         }
+
+
+
     }
 
     override fun showArea(area: Float) {
         txtResultado.text="El area es : ${area}"
+
+
         TODO("Not yet implemented")
     }
 
     override fun showPerimetro(perimetro: Float) {
         txtResultado.text= "El perimetro es ${perimetro}"
+
         TODO("Not yet implemented")
     }
 
     override fun showTipo(tipo: String) {
         txtResultado.text= "El tipo  es ${tipo}"
+
         TODO("Not yet implemented")
     }
 
     override fun ShowError(msg: String) {
         txtResultado.text= "Los datos son invalidos"
+
         TODO("Not yet implemented")
     }
 }

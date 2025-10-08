@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".CuadradoActivity">
 
 
     <LinearLayout
@@ -12,40 +13,31 @@
         android:layout_height="match_parent"
         android:layout_margin="20dp"
         android:orientation="vertical"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="37dp">
 
-       >
+
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            app:srcCompat="@mipmap/recta" />
-
+            app:srcCompat="@mipmap/cuadra" />
         <TextView
             android:id="@+id/txvTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Calculadora de Rectangulos 4B"
+            android:text="Calculadora de Cuadrados 4B"
             android:textSize="20sp"
             android:textAlignment="center"/>
         <EditText
-            android:id="@+id/editbase"
+            android:id="@+id/editlado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Captura la base"
+            android:hint="Captura el lado"
             android:textAlignment="center"
             android:layout_marginTop="25dp"
             android:textSize="25sp"
             android:textStyle="italic"/>
-        <EditText
-            android:id="@+id/editaltura"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Captura la altura"
-            android:textAlignment="center"
-            android:layout_marginTop="25dp"
-            android:textSize="25sp"
-            android:textStyle="italic"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,17 +48,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="50dp"
-                android:backgroundTint="#CB75E2"
+                android:backgroundTint="#DB6A8C"
                 android:text="Area"
-                app:rippleColor="#106A78" />
+                app:rippleColor="#788022" />
 
             <Button
                 android:id="@+id/btnPerimetro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
-                android:backgroundTint="#CB75E2"
+                android:backgroundTint="#DB6A8C"
                 android:text="Perimetro" />
+
 
         </LinearLayout>
         <TextView
@@ -77,6 +70,15 @@
             android:text="Resultado:"
             android:textAlignment="center"
             android:textSize="25sp" />
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
 
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

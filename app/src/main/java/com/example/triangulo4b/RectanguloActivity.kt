@@ -1,4 +1,4 @@
-package com.example.triangulo4b.Vista
+package com.example.triangulo4b
 
 import android.os.Bundle
 import android.widget.Button
@@ -9,11 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.triangulo4b.Contrato.ContratoRectangulo
-import com.example.triangulo4b.Modelo.ContratoTriangulo
 import com.example.triangulo4b.Presentador.PresentadorRectangulo
-import com.example.triangulo4b.R
 
-class RectanguloActivity: AppCompatActivity(), ContratoRectangulo.Vista {
+class RectanguloActivity : AppCompatActivity() , ContratoRectangulo.Vista{
+
     private lateinit var txtResultado: TextView
     private lateinit var Presentador : ContratoRectangulo.Presentador
 
@@ -21,7 +20,8 @@ class RectanguloActivity: AppCompatActivity(), ContratoRectangulo.Vista {
 
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.rectanguloactivity)
+        setContentView(R.layout.rectangulo)
+
         //inicializamos elemento a utilizar
         val txtaltura: EditText =findViewById<EditText>(R.id.editaltura)
         val txtbase: EditText =findViewById<EditText>(R.id.editbase)
@@ -46,16 +46,21 @@ class RectanguloActivity: AppCompatActivity(), ContratoRectangulo.Vista {
             val base=txtbase.text.toString().toFloat()
             Presentador.areaRectangulo(base,altura)
         }
+
     }
+
     override fun showAreaRectangulo(area: Float) {
         txtResultado.text="El area es ${area}"
+
         TODO("Not yet implemented")
     }
 
     override fun showPerimetroRectangulo(perimetro: Float) {
         txtResultado.text="El perimetro es ${perimetro}"
+
         TODO("Not yet implemented")
     }
+
     override fun showErrorRectangulo(msg: String) {
         txtResultado.text=msg
         TODO("Not yet implemented")
