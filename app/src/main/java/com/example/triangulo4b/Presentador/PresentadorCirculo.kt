@@ -7,7 +7,7 @@ import com.example.triangulo4b.Modelo.ModeloCirculo
 class PresentadorCirculo(private val vista: ContratoCirculo.Vista): ContratoCirculo.Presentador  {
     private val modelo: ContratoCirculo.Modelo= ModeloCirculo()
     override fun areaCirculo(radio: Float) {
-        if(modelo.validaCirculo(radio)==true) {
+        if(modelo.validaCirculo(radio)) {
             val a = modelo.areaCirculo(radio)
             vista.showAreaCirculo(a)
         }else{

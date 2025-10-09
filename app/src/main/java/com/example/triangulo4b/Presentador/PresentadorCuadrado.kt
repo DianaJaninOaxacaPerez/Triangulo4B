@@ -1,7 +1,6 @@
 package com.example.triangulo4b.Presentador
 
 import com.example.triangulo4b.Contrato.ContratoCuadrado
-import com.example.triangulo4b.Contrato.ContratoRectangulo
 import com.example.triangulo4b.Modelo.ModeloCuadrado
 
 class PresentadorCuadrado(private val vista: ContratoCuadrado.Vista): ContratoCuadrado.Presentador {
@@ -15,17 +14,14 @@ class PresentadorCuadrado(private val vista: ContratoCuadrado.Vista): ContratoCu
         }else{
             vista.showErrorC(msg="Datos incorrectos")
         }
-
-        TODO("Not yet implemented")
     }
 
     override fun perimetroCuadrado(lado: Float) {
         if(modelo.validaCuadrado(lado)) {
-            val a = modelo.areaCuadrado(lado)
+            val a = modelo.perimetroCuadrado(lado)
             vista.showPerimetroCuadrado(a)
         }else{
             vista.showErrorC(msg="Datos incorrectos")
         }
-        TODO("Not yet implemented")
     }
 }

@@ -11,9 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Triangulo4B">
-        <activity
-            android:name=".Vista.Triangulo4bActivity"
-            android:exported="false" />
+
 
         <activity
             android:name=".RectanguloActivity"
@@ -35,7 +33,7 @@
         </activity>
         <activity
             android:name=".Triangulo4bActivity"
-            android:exported="true" />
+            android:exported="false" />
     </application>
 
 </manifest>

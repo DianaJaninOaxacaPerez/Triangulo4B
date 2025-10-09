@@ -5,22 +5,18 @@ import com.example.triangulo4b.Contrato.ContratoRectangulo
 import kotlin.math.PI
 
 class ModeloCirculo : ContratoCirculo.Modelo {
-    override fun areaCirculo(radio: Float): Double {
-        return PI*radio*radio
+    override fun areaCirculo(radio: Float): Float {
+        return (PI*radio*radio).toFloat()
         TODO("Not yet implemented")
     }
 
-    override fun perimetroCirculo(radio: Float): Double {
-        return 2*PI*radio
+    override fun perimetroCirculo(radio: Float): Float {
+        return (2*PI*radio).toFloat()
         TODO("Not yet implemented")
     }
 
     override fun validaCirculo(radio: Float): Boolean {
-        if(radio>0){
-            return true
-        }else{
-            return false
-        }
+        return (radio > 0f)
         TODO("Not yet implemented")
     }
 

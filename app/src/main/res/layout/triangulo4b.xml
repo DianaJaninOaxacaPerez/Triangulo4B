@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Vista.Triangulo4bActivity">
+    tools:context=".Triangulo4bActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,11 +16,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Volver" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:src ="@mipmap/triangulito" />
+            android:src ="@drawable/triangulito" />
         <TextView
             android:id="@+id/txvTitulo"
             android:layout_width="match_parent"
@@ -60,6 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/btnArea"
                 android:layout_width="wrap_content"
@@ -88,6 +95,12 @@
             android:text="Resultado:"
             android:textAlignment="center"
             android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:orientation="horizontal">
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

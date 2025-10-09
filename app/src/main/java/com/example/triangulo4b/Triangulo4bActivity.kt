@@ -1,4 +1,4 @@
-package com.example.triangulo4b.Vista
+package com.example.triangulo4b
 
 import android.os.Bundle
 import android.widget.Button
@@ -10,7 +10,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.triangulo4b.Modelo.ContratoTriangulo
 import com.example.triangulo4b.Presentador.PresentadorTriangulo
-import com.example.triangulo4b.R
 import kotlin.math.sqrt
 
 class Triangulo4bActivity : AppCompatActivity() , ContratoTriangulo.Vista{
@@ -33,6 +32,8 @@ class Triangulo4bActivity : AppCompatActivity() , ContratoTriangulo.Vista{
         val btnArea = findViewById<Button>(R.id.btnArea)
         val btnPerimetro = findViewById<Button>(R.id.btnPerimetro)
         val btnTipo = findViewById<Button>(R.id.btnTipo)
+        val btnVolver = findViewById<Button>(R.id.btnVolver)
+
         val txtResultado = findViewById<TextView>(R.id.editResultado)
 
 
@@ -59,7 +60,7 @@ class Triangulo4bActivity : AppCompatActivity() , ContratoTriangulo.Vista{
             val l3 = txtl3.text.toString().toFloat()
 
             val s = (l1 + l2 + l3)/3;
-            val a = sqrt(s*(s-l1) * (s-l2) * (s-l3))
+            val a = sqrt(s * (s - l1) * (s - l2) * (s - l3))
             txtResultado.text = "El area es : ${a}"
 
         }
@@ -85,6 +86,9 @@ class Triangulo4bActivity : AppCompatActivity() , ContratoTriangulo.Vista{
             txtResultado.text = tipo
 
         }
+        btnVolver.setOnClickListener {
+            finish()
+        }
 
 
 
@@ -92,9 +96,6 @@ class Triangulo4bActivity : AppCompatActivity() , ContratoTriangulo.Vista{
 
     override fun showArea(area: Float) {
         txtResultado.text="El area es : ${area}"
-
-
-        TODO("Not yet implemented")
     }
 
     override fun showPerimetro(perimetro: Float) {

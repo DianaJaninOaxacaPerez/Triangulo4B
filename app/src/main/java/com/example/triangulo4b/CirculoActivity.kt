@@ -22,37 +22,41 @@ class CirculoActivity : AppCompatActivity() , ContratoCirculo.Vista{
         setContentView(R.layout.circulo)
 
 
-        val txtradio: EditText=findViewById<EditText>(R.id.editradio)
-        val btnArea: Button =findViewById<Button>(R.id.btnArea)
-        val btnPerimetro: Button =findViewById<Button>(R.id.btnPerimetro)
-        txtResultado=findViewById<TextView>(R.id.editResultado)
+        val txtradio=findViewById<EditText>(R.id.editradio)
+        val btnArea =findViewById<Button>(R.id.btnArea)
+        val btnPerimetro =findViewById<Button>(R.id.btnPerimetro)
+        val btnVolver =findViewById<Button>(R.id.btnVolver)
+        txtResultado = findViewById<TextView>(R.id.editResultado)
 
+        Presentador = PresentadorCirculo(this)
 
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.frmcirculo)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        Presentador = PresentadorCirculo(this)
+
         btnPerimetro.setOnClickListener {
-            val r = txtradio.text.toString().toFloat()
+            val r = txtradio.text.toString().toFloatOrNull()?: 0f
             Presentador.perimetroCirculo(r)
         }
         btnArea.setOnClickListener{
-            val r=txtradio.text.toString().toFloat()
+            val r=txtradio.text.toString().toFloatOrNull()?: 0f
             Presentador.areaCirculo(r)
+        }
+        btnVolver.setOnClickListener {
+            finish()
         }
 
 
     }
 
-    override fun showAreaCirculo(area: Double) {
+    override fun showAreaCirculo(area: Float) {
         txtResultado.text="El area es ${area}"
         TODO("Not yet implemented")
     }
 
-    override fun showPerimetroCirculo(perimetro: Double) {
+    override fun showPerimetroCirculo(perimetro: Float) {
         txtResultado.text="El area es ${perimetro}"
         TODO("Not yet implemented")
     }

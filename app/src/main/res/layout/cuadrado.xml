@@ -15,13 +15,19 @@
         android:orientation="vertical"
         tools:layout_editor_absoluteX="51dp"
         tools:layout_editor_absoluteY="37dp">
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Volver" />
 
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            app:srcCompat="@mipmap/cuadra" />
+            app:srcCompat="@drawable/cuadra" />
         <TextView
             android:id="@+id/txvTitulo"
             android:layout_width="match_parent"
@@ -30,7 +36,7 @@
             android:textSize="20sp"
             android:textAlignment="center"/>
         <EditText
-            android:id="@+id/editlado"
+            android:id="@+id/edtlado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Captura el lado"
@@ -63,7 +69,7 @@
 
         </LinearLayout>
         <TextView
-            android:id="@+id/editResultado"
+            android:id="@+id/txvRes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"

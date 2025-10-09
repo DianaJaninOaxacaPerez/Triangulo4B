@@ -7,12 +7,11 @@ class ModeloTriangulo: ContratoTriangulo.Modelo {
     override fun area(l1: Float, l2: Float, l3: Float): Float {
         val s = (l1+l2+l3)/2
         return sqrt(s*(s-l1)*(s-l2)*(s-l3))
-        TODO("Not yet implemented")
+
     }
 
     override fun perimtero(l1: Float, l2: Float, l3: Float): Float {
         return l1+ l2+ l3
-        TODO("Not yet implemented")
     }
 
     override fun tipo(l1: Float, l2: Float, l3: Float): String {
@@ -28,7 +27,6 @@ class ModeloTriangulo: ContratoTriangulo.Modelo {
             return "El triangulo es Isoceles"
         }
 
-        TODO("Not yet implemented")
     }
 
     override fun validaTriangulo(l1: Float, l2: Float, l3: Float): Boolean {

@@ -5,14 +5,12 @@ import com.example.triangulo4b.Contrato.ContratoCuadrado
 class ModeloCuadrado: ContratoCuadrado.Modelo {
     override fun areaCuadrado(lado: Float): Float {
 
-            return 4*lado
-        TODO("Not yet implemented")
+            return lado*lado
     }
 
     override fun perimetroCuadrado(lado: Float): Float {
 
-        return lado*lado
-        TODO("Not yet implemented")
+        return 4*lado
     }
 
     override fun validaCuadrado(lado: Float): Boolean {
@@ -22,7 +20,5 @@ class ModeloCuadrado: ContratoCuadrado.Modelo {
         }else{
             return false
         }
-
-        TODO("Not yet implemented")
     }
 }

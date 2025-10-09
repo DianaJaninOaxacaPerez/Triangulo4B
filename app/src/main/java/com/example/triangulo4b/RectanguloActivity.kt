@@ -10,12 +10,18 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.triangulo4b.Contrato.ContratoRectangulo
 import com.example.triangulo4b.Presentador.PresentadorRectangulo
+import com.example.triangulo4b.R
+import kotlin.toString
+import kotlin.math.sqrt
 
 class RectanguloActivity : AppCompatActivity() , ContratoRectangulo.Vista{
 
-    private lateinit var txtResultado: TextView
-    private lateinit var Presentador : ContratoRectangulo.Presentador
+    private lateinit var txvResultado: TextView
+    private lateinit var presentador : ContratoRectangulo.Presentador
 
+    fun setPresentador(presentador: ContratoRectangulo.Presentador) {
+        this.presentador = presentador
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -23,46 +29,45 @@ class RectanguloActivity : AppCompatActivity() , ContratoRectangulo.Vista{
         setContentView(R.layout.rectangulo)
 
         //inicializamos elemento a utilizar
-        val txtaltura: EditText =findViewById<EditText>(R.id.editaltura)
-        val txtbase: EditText =findViewById<EditText>(R.id.editbase)
-        val btnArea: Button=findViewById<Button>(R.id.btnArea)
-        val btnPerimetro: Button =findViewById<Button>(R.id.btnPerimetro)
-        val txtResultado = findViewById<TextView>(R.id.editResultado)
+        val txtaltura=findViewById<EditText>(R.id.editaltura)
+        val txtbase=findViewById<EditText>(R.id.editbase)
+        val btnArea=findViewById<Button>(R.id.btnArea)
+        val btnPerimetro=findViewById<Button>(R.id.btnPerimetro)
+        txvResultado = findViewById<TextView>(R.id.txvRes)
+        val btnVolver: Button = findViewById<Button>(R.id.btnVolver)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
         //Inicializamos al presentador//
-        Presentador = PresentadorRectangulo(this)
+        presentador = PresentadorRectangulo(this)
 
         btnPerimetro.setOnClickListener{
             val altura=txtaltura.text.toString().toFloat()
             val base=txtbase.text.toString().toFloat()
-            Presentador.perimetroRectangulo(base,altura)
+            presentador.perimetroRectangulo(base,altura)
         }
         btnArea.setOnClickListener {
             val altura=txtaltura.text.toString().toFloat()
             val base=txtbase.text.toString().toFloat()
-            Presentador.areaRectangulo(base,altura)
+            presentador.areaRectangulo(base,altura)
+        }
+        btnVolver.setOnClickListener {
+            finish()
         }
 
     }
 
     override fun showAreaRectangulo(area: Float) {
-        txtResultado.text="El area es ${area}"
-
-        TODO("Not yet implemented")
+        txvResultado.text="El area es ${area}"
     }
 
     override fun showPerimetroRectangulo(perimetro: Float) {
-        txtResultado.text="El perimetro es ${perimetro}"
-
-        TODO("Not yet implemented")
+        txvResultado.text="El perimetro es ${perimetro}"
     }
 
     override fun showErrorRectangulo(msg: String) {
-        txtResultado.text=msg
-        TODO("Not yet implemented")
+        txvResultado.text=msg
     }
 }
